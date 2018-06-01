@@ -57,14 +57,14 @@ class QueueSimulator:
 
 def main():
     parser = argparse.ArgumentParser(description="Arguments Description")
-    parser.add_argument('--lambdaArrival', nargs='?', default=0.5, help='Number of individuals that arrives in an amount t of time')
-    parser.add_argument('--muService', nargs='?', default=0.5, help='Number of individuals that are served in an amount t of time')
+    parser.add_argument('--lambdaArrival', nargs='?', default=5, help='Number of individuals that arrives in an amount t of time')
+    parser.add_argument('--muService', nargs='?', default=5, help='Number of individuals that are served in an amount t of time')
     parser.add_argument('--totalArrivals', nargs='?', default=100000, help='Total number of arrivals in the simulation')
 
     args = parser.parse_args()
 
-    LAMBDA_ARRIVAL = float(args.lambdaArrival)
-    MU_SERVICE = float(args.muService)
+    LAMBDA_ARRIVAL = 1/float(args.lambdaArrival)
+    MU_SERVICE = 1/float(args.muService)
     TOTAL_ARRIVALS = int(args.totalArrivals)
 
     sim = QueueSimulator(TOTAL_ARRIVALS, LAMBDA_ARRIVAL, MU_SERVICE)
