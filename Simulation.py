@@ -1,5 +1,15 @@
 import numpy, argparse
 
+'''
+    This work is meant to simulate how does system with queues behave in a
+    context where arrival and service time coefficient is given by an exponentially
+    distributed function.
+
+    The parameters can be set either modifying this source code, or by line
+    parameter with the flags described from line 60 to 62
+'''
+
+
 class QueueSimulator:
     def __init__(self, totalArrivals, lambdaArrival, muService):
         self.totalArrivals = totalArrivals
